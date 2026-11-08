@@ -139,7 +139,11 @@ $('vClose').onclick = () => $('viewer').close();
 $('clearBtn').onclick = () => { sel.clear(); render(); };
 $('daySel').onchange = e => loadDay(e.target.value);
 $('cfgBtn').onclick = () => { $('tok').value = getTok(); $('cfg').showModal(); };
-$('cfgSave').onclick = () => { setTok($('tok').value.trim()); $('cfg').close(); say('Đã lưu token.', 'ok'); };
+$('cfgSave').onclick = () => {
+  const v = $('tok').value.trim();
+  if (v && !/^[\x21-\x7e]+$/.test(v)) { alert('Token có ký tự lạ (dấu tiếng Việt, "…" hoặc xuống dòng). Hãy copy lại đúng chuỗi github_pat_… từ GitHub, không gõ tay.'); return; }
+  setTok(v); $('cfg').close(); say('Đã lưu token.', 'ok');
+};
 $('cfgClear').onclick = () => { setTok(''); $('tok').value = ''; };
 
 const b64 = s => btoa(unescape(encodeURIComponent(s)));
@@ -147,6 +151,7 @@ const b64 = s => btoa(unescape(encodeURIComponent(s)));
 $('sendBtn').onclick = async () => {
   const tok = getTok();
   if (!tok) { $('cfg').showModal(); return; }
+  if (!/^[\x21-\x7e]+$/.test(tok)) { setTok(''); say('Token đang lưu có ký tự lạ. Bấm ⚙️ và dán lại token mới (copy từ GitHub).', 'err'); return; }
   const path = `days/${cur}/approved.json`;
   const api = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`;
   const headers = { Authorization: 'Bearer ' + tok, Accept: 'application/vnd.github+json' };
