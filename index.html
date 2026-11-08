@@ -35,6 +35,8 @@
   #viewer .row { display:flex; gap:8px; padding:10px; background:#fff; border-radius:0 0 14px 14px; }
   #viewer .row button { flex:1; }
   .cap { padding:8px 12px; }
+  .capopt { text-align:left; white-space:pre-line; padding:8px 10px; border:1px solid var(--line); border-radius:10px; background:#fff; font:inherit; font-size:14px; cursor:pointer; }
+  .capopt.on { border-color:#d6336c; background:#fff0f6; }
   .cap textarea { width:100%; min-height:64px; font:inherit; padding:8px; border:1px solid var(--line); border-radius:10px; }
 </style>
 </head>
@@ -47,6 +49,7 @@
 <div class="meta" id="meta">Đang tải…</div>
 <div class="cap" id="capBox" hidden>
   <label for="cap" style="color:var(--muted);font-size:13px">Caption (sửa được, sẽ gửi cùng ảnh đã chọn)</label>
+  <div id="capOpts" style="display:flex;flex-direction:column;gap:6px;margin:6px 0"></div>
   <textarea id="cap"></textarea>
 </div>
 <div class="grid" id="grid"></div>
@@ -107,6 +110,10 @@ async function loadDay(d) {
     if (ap.caption) $('cap').value = ap.caption;
     say('Ngày này đã được gửi duyệt trước đó (' + sel.size + ' ảnh). Bạn có thể sửa và gửi lại.', 'ok');
   } catch { $('cap').value = manifest.caption || ''; }
+  const opts = manifest.captions || [];
+  $('capOpts').innerHTML = opts.map((c, i) => `<button type="button" class="capopt" data-i="${i}"><b>${i + 1}.</b> ${c.replace(/</g, '&lt;')}</button>`).join('');
+  if (!$('cap').value && opts.length) $('cap').value = opts[0];
+  $('capOpts').onclick = e => { const b = e.target.closest('.capopt'); if (!b) return; $('cap').value = opts[+b.dataset.i]; };
   $('capBox').hidden = false;
   $('meta').textContent = `${d} · ${manifest.items.length} ảnh` + (manifest.note ? ' · ' + manifest.note : '');
   render();

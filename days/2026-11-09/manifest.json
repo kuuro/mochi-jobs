@@ -1,0 +1,51 @@
+{
+ "date": "2026-11-09",
+ "note": "Test: 1 ref (cafe trà sữa), 10 pose",
+ "captions": [
+  "Trà sữa thì ngọt vừa đủ.\nCòn em thì ngọt tùy anh. 🍡",
+  "Cafe thì đắng, trà sữa thì ngọt.\nVậy anh chọn em kiểu nào?",
+  "Em ngồi cafe đợi mãi.\nVẫn thiếu người ngồi đối diện ☁️"
+ ],
+ "items": [
+  {
+   "id": "01",
+   "file": "img/01.jpg"
+  },
+  {
+   "id": "02",
+   "file": "img/02.jpg"
+  },
+  {
+   "id": "03",
+   "file": "img/03.jpg"
+  },
+  {
+   "id": "04",
+   "file": "img/04.jpg"
+  },
+  {
+   "id": "05",
+   "file": "img/05.jpg"
+  },
+  {
+   "id": "06",
+   "file": "img/06.jpg"
+  },
+  {
+   "id": "07",
+   "file": "img/07.jpg"
+  },
+  {
+   "id": "08",
+   "file": "img/08.jpg"
+  },
+  {
+   "id": "09",
+   "file": "img/09.jpg"
+  },
+  {
+   "id": "10",
+   "file": "img/10.jpg"
+  }
+ ]
+}
