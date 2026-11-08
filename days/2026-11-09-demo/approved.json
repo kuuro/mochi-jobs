@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-09-demo",
+  "approved": [
+    "01",
+    "02",
+    "03",
+    "05"
+  ],
+  "files": [
+    "img/01.svg",
+    "img/02.svg",
+    "img/03.svg",
+    "img/05.svg"
+  ],
+  "caption": "Caption demo",
+  "approved_at": "2026-11-08T16:43:43.067Z"
+}
