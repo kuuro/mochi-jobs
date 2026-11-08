@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "note": "Test: 1 ref (cafe trà sữa) · 01–10 bộ 1, 11–20 bộ 2 (pose + góc ngẫu nhiên) · đã xoá dấu sao Gemini",
+ "note": "Test: 1 ref (cafe trà sữa) · 01–10 bộ 1 · 11–20 bộ 2 (ngẫu nhiên) · 21–30 bộ 3 (sexy hơn) · đã xoá dấu sao Gemini",
  "captions": [
   "Trà sữa thì ngọt vừa đủ.\nCòn em thì ngọt tùy anh. 🍡",
   "Cafe thì đắng, trà sữa thì ngọt.\nVậy anh chọn em kiểu nào?",
@@ -86,6 +86,46 @@
   {
    "id": "20",
    "file": "img/20.jpg"
+  },
+  {
+   "id": "21",
+   "file": "img/21.jpg"
+  },
+  {
+   "id": "22",
+   "file": "img/22.jpg"
+  },
+  {
+   "id": "23",
+   "file": "img/23.jpg"
+  },
+  {
+   "id": "24",
+   "file": "img/24.jpg"
+  },
+  {
+   "id": "25",
+   "file": "img/25.jpg"
+  },
+  {
+   "id": "26",
+   "file": "img/26.jpg"
+  },
+  {
+   "id": "27",
+   "file": "img/27.jpg"
+  },
+  {
+   "id": "28",
+   "file": "img/28.jpg"
+  },
+  {
+   "id": "29",
+   "file": "img/29.jpg"
+  },
+  {
+   "id": "30",
+   "file": "img/30.jpg"
   }
  ]
 }
